@@ -27,8 +27,33 @@ function startTypedEffect(elementId, strings, typeSpeed = 130, backSpeed = 130, 
         typeSpeed: typeSpeed, // سرعة الكتابة
         backSpeed: backSpeed, // سرعة المسح
         loop: loop // التكرار
-     
+
     });
     console.log("type Autio")
 }
 startTypedEffect('#auto-type', ['Frontend Developer', 'Student', 'Software Engineering']);
+
+
+// func darkmode
+let body = document.getElementById('body');
+let icon = document.getElementById('iconLight');
+
+function darkAndLight() {
+    if (body.style.backgroundColor === 'rgb(255, 255, 255)' || body.style.backgroundColor === '#FFF' || body.style.backgroundColor === '') {
+        // وضع الليل
+        body.style.backgroundColor = '#422003';
+        body.style.color = "#FFF";
+        icon.classList.remove('bi-moon-fill'); // مسح الكلاس القديم
+        icon.classList.add('bi-brightness-high-fill'); // إضافة الكلاس الجديد
+        icon.style.color = 'orange'
+    } else {
+        // وضع النهار
+        body.style.backgroundColor = '#FFF';
+        body.style.color = "#000";
+        icon.classList.remove('bi-brightness-high-fill'); // مسح الكلاس القديم
+        icon.classList.add('bi-moon-fill'); // إضافة الكلاس الجديد
+        icon.style.color = 'orange'
+    }
+}
+
+icon.addEventListener('click', darkAndLight);
