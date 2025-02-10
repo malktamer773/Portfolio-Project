@@ -37,19 +37,25 @@ startTypedEffect('#auto-type', ['Frontend Developer', 'Student', 'Software Engin
 // func darkmode
 let body = document.getElementById('body');
 let icon = document.getElementById('iconLight');
-
+let header= document.getElementById('header');
 function darkAndLight() {
     if (body.style.backgroundColor === 'rgb(255, 255, 255)' || body.style.backgroundColor === '#FFF' || body.style.backgroundColor === '') {
         // وضع الليل
-        body.style.backgroundColor = '#422003';
+        body.style.backgroundColor = '#282828';
+        header.style.backgroundColor = '#282828';
+        document.documentElement.style.setProperty('--mainColor', '#FFEB00');
         body.style.color = "#FFF";
+        header.style.color = "#FFF";
         icon.classList.remove('bi-moon-fill'); // مسح الكلاس القديم
         icon.classList.add('bi-brightness-high-fill'); // إضافة الكلاس الجديد
         icon.style.color = 'orange'
     } else {
         // وضع النهار
         body.style.backgroundColor = '#FFF';
+        header.style.backgroundColor = '#FFF';
+        document.documentElement.style.setProperty('--mainColor', '#ff4500');
         body.style.color = "#000";
+        header.style.color = "#000";
         icon.classList.remove('bi-brightness-high-fill'); // مسح الكلاس القديم
         icon.classList.add('bi-moon-fill'); // إضافة الكلاس الجديد
         icon.style.color = 'orange'
@@ -57,3 +63,5 @@ function darkAndLight() {
 }
 
 icon.addEventListener('click', darkAndLight);
+
+
